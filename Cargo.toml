@@ -1,0 +1,12 @@
+[package]
+name = "geom"
+version = "0.1.0"
+authors = ["Roman <blackwanted@yandex.ru>"]
+edition = "2018"
+
+[dependencies]
+num = "0.4"
+
+[[bin]]
+name = "t"
+path = "t.rs"
