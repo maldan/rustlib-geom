@@ -6,7 +6,4 @@ edition = "2018"
 
 [dependencies]
 num = "0.4"
-
-[[bin]]
-name = "t"
-path = "t.rs"
+paste = "0.1"

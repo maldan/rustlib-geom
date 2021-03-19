@@ -1,4 +1,4 @@
-mod point2d;
+mod point;
 mod rectangle;
-pub use point2d::Point2D;
-pub use rectangle::Rectangle;
+pub use point::*;
+pub use rectangle::*;
