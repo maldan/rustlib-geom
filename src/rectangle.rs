@@ -60,6 +60,7 @@ define_struct!(i16);
 define_struct!(i32);
 define_struct!(i64);
 define_struct!(i128);
+define_struct!(isize);
 define_struct!(f32);
 define_struct!(f64);
 
@@ -112,5 +113,5 @@ mod tests {
         };
     }
 
-    test_all!(i8, i16, i32, i64, i128, f32, f64);
+    test_all!(i8, i16, i32, i64, i128, isize, f32, f64);
 }
