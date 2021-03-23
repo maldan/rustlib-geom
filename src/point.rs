@@ -3,8 +3,8 @@ use std::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Sub, SubAssign};
 
 #[macro_export]
 macro_rules! point {
-    ($x: expr, $y: expr) => {
-        Vector2::new($x, $y)
+    ($x: expr, $y: expr, $type: ident) => {
+        geom::Point2::<$type>::new($x, $y)
     };
 }
 
@@ -105,6 +105,24 @@ macro_rules! define_struct {
                 let a = p1.x - p2.x;
                 let b = p1.y - p2.y;
                 (a * a + b * b).sqrt()
+            }
+
+            pub fn magnitude(&self) -> $type {
+                (self.x * self.x + self.y * self.y).sqrt()
+            }
+
+            pub fn normalize(&self) -> Point2<$type> {
+                let mag = self.magnitude();
+                if mag > 0 as $type {
+                    *self / mag
+                } else {
+                    *self
+                }
+                // Point2::<$type>::new(1 as $type / self.x, 1 as $type / self.y)
+            }
+
+            pub fn as_f32(&self) -> Point2<f32> {
+                Point2::<f32>::new(self.x as f32, self.y as f32)
             }
         }
 
